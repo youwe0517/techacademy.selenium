@@ -22,7 +22,7 @@ wait = Selenium::WebDriver::Wait.new(:timeout => 10)
 d.get('https://techacademy.jp/magazine/20558')
 
 image_url = d.find_element(:class, 'post-header').find_element(:class, 'eyecatch').attribute("style").match(%r{https?://[\w_.!*\/')(-]+}).to_s
-open("./images/.jpg", 'wb') do |output|
+open("./images/test.jpg", 'wb') do |output|
     open(image_url,opt) do |data|
         output.write(data.read)
     end
